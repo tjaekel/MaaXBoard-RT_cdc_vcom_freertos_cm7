@@ -728,7 +728,8 @@ void APPTask(void *handle)
                 uint32_t size = s_sendSize;
                 s_sendSize    = 0;
 
-                //the DbgConsole_... does not work in parallel
+                //the DbgConsole_... works in parallel - LPUART1 is needed!
+                DbgConsole_Putchar((int)s_currSendBuf[0]);
 
                 //add a NEWLINE if CARRIAGE RETURN was there
                 if (s_currSendBuf[size - 1] == '\r') {

@@ -20,8 +20,8 @@ Now, you can use USB-C only (needed for power), it provides also a VCP UART.
 The LPUART, used on debugger (or via external UART-to-USB dongle), is not needed:
 the board runs with a UART and just with USB-C as connection.
 
-BTW: The original Debug UART (LPUART), is not working (in parallel).
-It might be possible to enable this one again and as well (e.g. for debug purposes, as backdoor...).
+BTW: The original Debug UART (LPUART), is working (in parallel):
+use the LPUART1 (not 6), in file board.h.
 
 ## How to use?
 Install all for the MaaXBoard-RT as documented by AVNET, find in:
@@ -30,5 +30,6 @@ Install all for the MaaXBoard-RT as documented by AVNET, find in:
 ### Remark:
 The "board.h" file has to be the latest version (find it in the project here).
 The installation of the Flash Loader (and file) is slightly different:
-I think, you have to copy also file into a workspace sub-folder (see the error message on debug start/flashing the board).
+I think, you have to copy also file into a workspace sub-folder (see the error message on debug start/flashing the board)
+and copye also pin_mux files (potentially entire "board" folder content.
 
